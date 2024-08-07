@@ -1,11 +1,9 @@
-import ContactForm from './components/ContactForm/ContactForm';
-import ContactList from './components/ContactList/ContactList';
-import SearchBox from './components/SearchBox/SearchBox'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from './redux/contactsOps';
-import { selectError, selectIsLoading } from './redux/selectors';
-import { Audio } from 'react-loader-spinner'
+import { fetchContacts } from '../redux/contacts/operations';
+import { selectError, selectIsLoading } from '../redux/contacts/selectors';
+import { Audio } from 'react-loader-spinner';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -20,12 +18,18 @@ function App() {
 
   return (
     <div>
-      <h1><b>Phonebook</b></h1>
+      {/* <h1><b>Phonebook</b></h1>
       <ContactForm />
       <SearchBox />
       {isLoading && <Audio />}
       {error && <p>There is something wrong, please reload the page</p>}
-      <ContactList />
+      <ContactList /> */}
+        <Routes>
+        <Route ></Route>
+        <Route></Route>
+        <Route></Route>
+        <Route></Route>
+        </Routes>
     </div>
   );
 }
