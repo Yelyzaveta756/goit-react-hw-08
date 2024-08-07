@@ -1,7 +1,12 @@
+import DocumentTitle from "../../components/DocumentTitle"
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
 export default function RegistrationPage (){
     return (
-        <RegistrationForm></RegistrationForm>
+        <div>
+             <DocumentTitle>Registration</DocumentTitle>
+             <RegistrationForm />
+        </div>
+       
     )
 }

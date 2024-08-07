@@ -11,6 +11,7 @@ export const fetchContacts = createAsyncThunk(
       try {
         const response = await axios.get("contacts");
         // При успішному запиті повертаємо проміс із даними
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
         return response.data;
       } catch (error) {
         // При помилці запиту повертаємо проміс
@@ -25,6 +26,7 @@ export const fetchContacts = createAsyncThunk(
     async (newContacts, thunkAPI) => {
         try {
             const response = await axios.post("contacts", newContacts);
+            axios.defaults.headers.common.Authorization = `Bearer ${token}`
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
@@ -37,6 +39,7 @@ export const fetchContacts = createAsyncThunk(
     async (id, thunkAPI) => {
         try {
             const response = await axios.delete(`contacts/${id}`);
+            axios.defaults.headers.common.Authorization = '';
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
