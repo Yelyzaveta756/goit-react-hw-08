@@ -8,6 +8,7 @@ import { refreshUser } from '../redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute'
 import { Loader } from './Loader/Loader';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<ContactsPage />} />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
+        <Toaster />
        </Layout>
         </Suspense>
   )

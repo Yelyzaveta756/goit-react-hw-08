@@ -13,14 +13,13 @@ const FeedbackSchema = Yup.object().shape({
 
 export default function ContactForm() {
 
-const contactId = useId();
-const dispatch = useDispatch()
+  const contactId = useId();
+  const dispatch = useDispatch()
 
-const initialValues = {
-  name: '',
-  number: '',
-};
-
+  const initialValues = {
+    name: '',
+    number: '',
+  };
 
   const handleSubmit = (values, actions) => {
     dispatch(addContact(values))
