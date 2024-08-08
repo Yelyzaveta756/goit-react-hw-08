@@ -10,15 +10,15 @@ export default function Navigation(){
         return clsx(css.link, isActive && css.active);
       };
 
-      const { isLoggedIn } = useSelector(selectIsLoggedIn);
+      const isLoggedIn = useSelector(selectIsLoggedIn);
 
     return (
         <nav className={css.navigation}>
             <ul className={css.navigationList}>
-                <li><NavLink to="/" className={buildLinkClass}>Home</NavLink></li>
-                {isLoggedIn && (
-                    <li><NavLink to="/contacts" className={buildLinkClass}>Contacts</NavLink></li>
-                      )} 
+                <li><NavLink to="/" className={buildLinkClass}><b>Home</b></NavLink></li>
+                {isLoggedIn && 
+                    <li><NavLink to="/contacts" className={buildLinkClass}><b>Contacts</b></NavLink></li>
+                       } 
                 </ul>
         </nav>
     )

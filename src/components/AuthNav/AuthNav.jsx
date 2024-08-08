@@ -9,11 +9,11 @@ export default function AuthNav(){
       };
 
     return (
-        <nav className={css.navigation}>
+        <div className={css.navigation}>
             <ul className={css.navigationList}>
-                <li><NavLink to="/register" className={buildLinkClass}>Register</NavLink></li>
-                    <li><NavLink to="/login" className={buildLinkClass}>Log In</NavLink></li>
+                <li><NavLink to="/register" className={buildLinkClass}><b>Register</b></NavLink></li>
+                    <li><NavLink to="/login" className={buildLinkClass}><b>Log In</b></NavLink></li>
                 </ul>
-        </nav>
+        </div>
     )
 }

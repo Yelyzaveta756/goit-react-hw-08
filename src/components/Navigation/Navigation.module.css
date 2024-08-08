@@ -5,6 +5,12 @@
 }
 
 .active {
-    background: rgb(163, 163, 254);
+    background: rgb(54, 54, 255);
     color: white;
+}
+
+.navigationList {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
 }

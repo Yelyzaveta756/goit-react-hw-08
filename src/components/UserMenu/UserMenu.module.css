@@ -1,0 +1,19 @@
+.logoutBtn {
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.logoutBtn:hover {
+    background: rgb(224, 35, 2);
+    color: white;
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
