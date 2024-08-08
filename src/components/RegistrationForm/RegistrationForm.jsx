@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import { register } from "../../redux/auth/operations";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import css from './RegistrationForm.module.css'
 
 export default function RegistrationForm() {
 
@@ -24,19 +25,19 @@ export default function RegistrationForm() {
     }
 
 return (
-    <div>
+    <div className={css.registrationContainer}>
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form>
-                <label htmlFor="name" >Name</label>
-                <Field type="text" name="name" autoComplete="off" required></Field>
-                <ErrorMessage name='name' component='span' />
-                <label htmlFor="email" >Email</label>
-                <Field type="email" name="email" autoComplete="off" required></Field>
-                <ErrorMessage name='email' component='span' />
-                <label htmlFor="password">Password</label>
-                <Field type="password" name="password" autoComplete="off" required></Field>
-                <ErrorMessage name='password' component='span' />
-                <button type="submit">Register</button>
+            <Form className={css.form}>
+                <label htmlFor="name" className={css.labelfirst}>Name</label>
+                <Field type="text" name="name" autoComplete="off" className={css.input} required></Field>
+                <ErrorMessage name='name' component='span' className={css.error} />
+                <label htmlFor="email" className={css.labelfirst}>Email</label>
+                <Field type="email" name="email" autoComplete="off" className={css.input} required></Field>
+                <ErrorMessage name='email' component='span' className={css.error} />
+                <label htmlFor="password" className={css.labelfirst}>Password</label>
+                <Field type="password" name="password" autoComplete="off" className={css.input} required></Field>
+                <ErrorMessage name='password' component='span' className={css.error} />
+                <button type="submit" className={css.addBtn}>Register</button>
             </Form>
         </Formik>
     </div>

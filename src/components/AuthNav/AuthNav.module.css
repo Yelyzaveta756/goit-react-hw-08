@@ -1,0 +1,17 @@
+.link {
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.active {
+    background: rgb(163, 163, 254);
+    color: white;
+}
+
+
+.navigationList {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}

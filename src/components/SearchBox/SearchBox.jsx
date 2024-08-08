@@ -1,22 +1,26 @@
 import { useId } from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { changeFilter } from '../../redux/filters/slice'
-import { selectNameFilter } from '../../redux/filters/selectors'
+import { changeNameFilter, changePhoneFilter } from '../../redux/filters/slice'
+import { selectNameFilter, selectPhoneFilter } from '../../redux/filters/selectors'
 import css from './SearchBox.module.css'
 
 export default function SearchBox(){
 
-    const inputId = useId()
+    const nameId = useId()
+    // const phoneId = useId()
     const dispatch = useDispatch()
-    const filter = useSelector(selectNameFilter);
+    const nameFilter = useSelector(selectNameFilter);
+    // const phoneFilter = useSelector(selectPhoneFilter);
 
-    const handleFilter = (e) => dispatch(changeFilter(e.target.value))
+    const handleNameFilter = (e) => dispatch(changeNameFilter(e.target.value))
+    // const handlePhoneFilter = (e) => dispatch(changePhoneFilter(e.target.value))
     
     return (
         <div>
-            <p className={css.findTitle}>Find contacts by name</p>
-            <input type="text"  id={inputId} value={filter} onChange={handleFilter} className={css.searchInput}/>
+            <p className={css.findTitle}>Find contacts by name or phone</p>
+            <input type="text" id={nameId} value={nameFilter} onChange={handleNameFilter} placeholder="Name" className={css.searchInput}/>
+            {/* <input type="text" id={phoneId} value={phoneFilter} onChange={handlePhoneFilter} placeholder="Phone" className={css.searchInput}/> */}
         </div>
     )
 }

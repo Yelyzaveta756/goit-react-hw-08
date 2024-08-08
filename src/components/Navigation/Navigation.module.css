@@ -1,7 +1,7 @@
 .link {
     color: black;
-    padding: 5px 5px 0 5px;
-    border-radius: 5px 5px 0 0;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .active {
