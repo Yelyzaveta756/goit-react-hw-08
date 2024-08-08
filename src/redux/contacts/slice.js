@@ -8,26 +8,6 @@ const contactsSlice = createSlice({
         isLoading: false,
         error: null,
     },
-    // reducers: {
-    //     addContact: {
-    //         reducer(state, action) {
-    //         state.items.push(action.payload);
-    //     },
-    //     prepare ({name, number}){
-    //         return {
-    //             payload: {
-    //             name: name,
-    //             number: number,
-    //             id: nanoid()
-    //             }
-    //         }
-    //     }
-    // },
-    //     deleteContact(state, action) {
-    //         state.items = state.items.filter(
-    //             (contact) => contact.id !== action.payload)
-    //     },
-    // }
     extraReducers: builder => {
         builder  
         .addCase(fetchContacts.pending, (state) => {

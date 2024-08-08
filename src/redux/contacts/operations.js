@@ -2,8 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = 'https://connections-api.goit.global/'
-
 export const fetchContacts = createAsyncThunk(
     "contacts/fetchContacts",
     // Використовуємо символ підкреслення як ім'я першого параметра,
