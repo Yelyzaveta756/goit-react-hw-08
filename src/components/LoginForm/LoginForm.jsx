@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { Formik, Form, Field } from "formik";
+import { login } from "../../redux/auth/operations";
 
 export default function LoginForm(){
     const initialValues = {
@@ -9,18 +10,20 @@ export default function LoginForm(){
 
       const dispatch = useDispatch()
 
-    const handleSubmit = (values, action) => {
-        dispatch(registrationNewUser(values))
+    const handleSubmit = (values) => {
+        dispatch(login(values))
         console.log(values)
-        action.resetForm()
     }
 
 return (
     <div>
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form>
-                <Field type="text">Email</Field>
-                <Field type="text">Password</Field>
+                <label htmlFor="email" >Email</label>
+                <Field type="email" name="email" autoComplete="off" required></Field>
+                <label htmlFor="password" >Email</label>
+                <Field type="password" name="password" autoComplete="off" required></Field>
+                <button type="submit">Login</button>
             </Form>
         </Formik>
     </div>

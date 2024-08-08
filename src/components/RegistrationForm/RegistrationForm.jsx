@@ -12,19 +12,21 @@ export default function RegistrationForm() {
 
       const dispatch = useDispatch()
 
-    const handleSubmit = (values, action) => {
+    const handleSubmit = (values) => {
         dispatch(register(values))
         console.log(values)
-        action.resetForm()
     }
 
 return (
     <div>
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form>
-                <Field type="text" name="name"></Field>
-                <Field type="email" name="email"></Field>
-                <Field type="password" name="password"></Field>
+                <label htmlFor="name" >Name</label>
+                <Field type="text" name="name" autoComplete="off" required></Field>
+                <label htmlFor="email" >Email</label>
+                <Field type="email" name="email" autoComplete="off" required></Field>
+                <label htmlFor="password">Password</label>
+                <Field type="password" name="password" autoComplete="off" required></Field>
                 <button type="submit">Register</button>
             </Form>
         </Formik>

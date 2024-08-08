@@ -18,7 +18,7 @@ export default function Navigation(){
                 <li><NavLink to="/" className={buildLinkClass}>Home</NavLink></li>
                 {isLoggedIn && (
                     <li><NavLink to="/contacts" className={buildLinkClass}>Contacts</NavLink></li>
-                     )}
+                      )} 
                 </ul>
         </nav>
     )

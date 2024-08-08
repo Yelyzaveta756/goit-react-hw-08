@@ -1,7 +1,3 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchContacts } from '../redux/contacts/operations';
-// import { selectError, selectIsLoading } from '../redux/contacts/selectors';
 import { Routes, Route } from 'react-router-dom';
 import { Suspense,lazy } from 'react';
 import { Layout } from './Layout/Layout';
@@ -9,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsRefreshing } from '../redux/auth/selectors';
 import { refreshUser } from '../redux/auth/operations';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute'
 import './App.css';
 
 
@@ -35,9 +33,9 @@ function App() {
        <Layout>
        <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/register" element={<RegistrationPage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/contacts" element={<ContactsPage />}></Route>
+        <Route path="/register" element={<RestrictedRoute redirectTo="/contacts" component={<RegistrationPage />} />}></Route>
+        <Route path="/login" element={<RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />}></Route>
+        <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<ContactsPage />} />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
        </Layout>
